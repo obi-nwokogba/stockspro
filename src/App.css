@@ -1,5 +1,45 @@
+* {
+  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+a {
+  color: #196ACF;
+  text-decoration: none;
+  transition: 0.14s;
+}
+
+a:hover {
+  color: #1259b1f3;
+  border-bottom: solid 2px #196bcf96;
+  margin-left: 7px;
+}
+
+a>h2:hover {
+  border-bottom: orangered;
+}
+
+body {
+  color: #01449d;
+  font-family: 'Rajdhani', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(248, 249, 250);
+  border-top: solid 7px rgb(255, 129, 56);
+
+}
+
 .App {
   text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  padding-left: 20px;
+  border-left: solid 20px #eee;
+  padding-bottom: 60px;
 }
 
 .App-logo {
@@ -28,11 +68,128 @@
   color: #61dafb;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(248, 249, 250);
+  color: #11478a;
+  padding: 15px;
+  padding-left: 0px;
+  font-size: 1.8em;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.nav a {
+  color: #11478a;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: 0.2s;
+  border-top: solid 4px transparent;
+  border-bottom: none;
+}
+
+.nav a:hover {
+  border-top: solid 4px rgb(255, 129, 56);
+  font-weight: 600;
+  border-bottom: none;
+}
+
+h1 {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  color: #0261e0;
+}
+
+.buttonrow {
+  display: flex;
+  flex-direction: row;
+  opacity: 0.8;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: solid 3px #ededed;
+}
+
+
+
+.lighter {
+  opacity: 0.75;
+}
+
+.lightest {
+  opacity: 0.5;
+}
+
+.companies {
+  text-align: left;
+}
+
+.companyInfoDiv {
+  text-align: left;
+}
+
+.infoName {
+  padding: 0px;
+  margin: 0px;
+  border-bottom: dotted 1px #67a0ec;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-weight: 700;
+  color: #67a0ec;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.companyurl {
+  background-color: #ececec;
+  color: #2d68b4;
+  border-radius: 7px;
+  font-size: 0.7em;
+  padding: 3px;
+  font-weight: 700;
+}
+
+.aboutpagecontainer {}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
+}
+
+.greentext {
+  color: rgb(0, 105, 65);
+}
+
+.paragraph {
+  font-size: 1.4em;
+  color: #333333;
+  text-align: left;
+  font-weight: 500;
 }
