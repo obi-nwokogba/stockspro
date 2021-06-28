@@ -2,7 +2,16 @@ import { useState, useEffect } from "react";
 
 const PercentChange = (props) => {
 
-    const apiKey = "c2qq5lqad3ickc1m1gsg";
+    let apiKey = "c2qq5lqad3ickc1m1gsg";
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+  
+    if(getRandomInt(2)==1){
+      apiKey = "c3d04bqad3i868don970";
+    }
+    
     const symbol = props.symbol;
     const url1 = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
 
