@@ -7,10 +7,10 @@ const Nav = (props) => {
         <h1>stocks<span className="lightest">pro</span></h1>
         <div className="buttonrow">
             <Link to="/">
-                <div>Home</div>
+                <div>Companies</div>
             </Link>
             <Link to="/companies">
-                <div>Companies</div>
+                <div>Home</div>
             </Link>
             <Link to="/about">
                 <div>About</div>

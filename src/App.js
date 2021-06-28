@@ -1,11 +1,12 @@
-
 import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Stocks from "./pages/Stocks";
 import About from "./pages/About";
 import Main from "./pages/Main";
-import Price from "./pages/Price";
+import Company from "./pages/Company";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
         </Route>
         <Route 
           path="/stocks/:symbol"
-          render={(routerProps)=> <Price {...routerProps} />}
+          render={(routerProps)=> <Company {...routerProps} />}
         />
       </Switch>
+      <Footer />
     </div>
   );
 }

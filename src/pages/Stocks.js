@@ -1,37 +1,6 @@
 import { Link } from 'react-router-dom';
-
-
-/*
-
-Travelers
-Walgreens Boots Alliance
-Dow
-American Express
-Goldman Sachs
-Caterpillar
-IBM
-
-Honeywell
-McDonald’s
-Chevron
-Cisco
-Salesforce
-Coca-Cola
-Merck & Co.
-Nike
-Intel
-Verizon
-Home Depot
-Disney
-Procter & Gamble
-UnitedHealth Group
-Walmart
-Johnson & Johnson
-JPMorgan Chase
-Visa
-Microsoft
-
-*/
+import CurrentPrice from "../components/CurrentPrice";
+import PercentChange from "../components/PercentChange";
 
 const Companies = (props) => {
   const companies = [
@@ -59,15 +28,27 @@ const Companies = (props) => {
 
   return (
     <div className="companies">
+
+<table><tr><td>company</td>
+<td>current price</td>
+<td>% change</td></tr>
+
+
       {companies.map((stock) => {
         const {name, symbol} = stock;
 
         return (
+          <tr><td>
           <Link to={`/stocks/${symbol}`}>
-            <h2>{name}</h2>
+            <h2>{name} <span className="lightest">{symbol}</span></h2>
           </Link>
+          </td><td><CurrentPrice symbol={symbol}/></td>
+          <td><PercentChange symbol={symbol}/></td>
+          </tr>
         );
       })}
+
+</table>
     </div>
   )
 };

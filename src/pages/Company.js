@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Price = (props) => {
+const Company = (props) => {
   const apiKey = "c2qq5lqad3ickc1m1gsg";
   const symbol = props.match.params.symbol;
 
@@ -16,7 +16,6 @@ const Price = (props) => {
     const profileResponse = await fetch(url2);
     const profileData = await profileResponse.json();
     setCompanyProfile(profileData);
-
     setStock(data);
   }
 
@@ -27,23 +26,30 @@ const Price = (props) => {
 
   const loaded = () => {
 
-    let openingprice =  stock.o;
+    let openingprice = stock.o;
     let currentprice = stock.c - stock.o;
-    let stockisup,currentpricedisplay = "";
+    let currentpricedisplay = "";
 
-    if(currentprice > openingprice){
-      stockisup = true;
-      currentpricedisplay =`<span className="greentext">{stock.c}</span>`;
+    let changeamount = stock.c - stock.pc;
+        let changepercentage = (changeamount/stock.pc) * 100;
+        let returnedString = "";
+        
+        changepercentage = (changepercentage * 100) / 100;
+        changepercentage = changepercentage.toFixed(2);
+
+    if (currentprice > openingprice) {
+
+      currentpricedisplay = <span className="greentext">{stock.c} {changepercentage}%</span>;
     }
-    else{
-      stockisup = false;
+    else {
+      currentpricedisplay = <span className="redtext">${stock.c} {changepercentage}%</span>;
     }
 
     return (
       <div className="companyInfoDiv">
 
-        <h1> {companyProfile.name}</h1>
-        <a className="companyurl" href="{companyProfile.weburl}" target="_blank">
+        <span class="companyname"> {companyProfile.name}</span>
+        <a className="companyurl" href={companyProfile.weburl} target="_blank">
           {companyProfile.weburl}</a>
 
         <p className="infoName"> stock ticker symbol </p>
@@ -51,14 +57,7 @@ const Price = (props) => {
 
         <p className="infoName"> current price </p>
         <p className="infoValue">
-          
-          
-          
-          
-          ${currentpricedisplay}
-        
-        
-        
+          {currentpricedisplay}
         </p>
 
         <p className="infoName"> Today's High, Today's Low </p>
@@ -78,4 +77,4 @@ const Price = (props) => {
   return stock ? loaded() : loading();
 };
 
-export default Price;
+export default Company;
