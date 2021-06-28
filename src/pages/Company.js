@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 
 const Company = (props) => {
-  const apiKey = "c2qq5lqad3ickc1m1gsg";
-  const symbol = props.match.params.symbol;
+  let apiKey = "c2qq5lqad3ickc1m1gsg";
 
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  if(getRandomInt(2)==1){
+    apiKey = "c3d04bqad3i868don970";
+  }
+  
+  const symbol = props.match.params.symbol;
   const url1 = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
   const url2 = `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${apiKey}`;
-
   const [stock, setStock] = useState(null);
   const [companyProfile, setCompanyProfile] = useState(null);
 
